@@ -4,13 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>For You, My Love ❤️</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Open+Sans&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: 'Comic Sans MS', cursive;
+      font-family: 'Poppins', sans-serif;
       background: linear-gradient(to right, #cc8899, #ffe4ec);
       color: #fff;
       padding: 40px;
       text-align: center;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3em;
+      color: #fff0f5;
     }
 
     .container {
@@ -22,10 +32,6 @@
       margin: auto;
     }
 
-    h1 {
-      color: #fff0f5;
-    }
-
     .button-group button, .reveal {
       margin: 10px;
       padding: 12px 20px;
@@ -35,6 +41,7 @@
       border-radius: 10px;
       font-weight: bold;
       cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
     }
 
     button:hover {
@@ -47,6 +54,8 @@
       padding: 15px;
       border-radius: 10px;
       color: #fff;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.05em;
     }
 
     iframe {
@@ -77,23 +86,24 @@
   </div>
 
   <script>
-    const videos = [
-      "https://www.youtube.com/embed/tucWbkH5WX0?si=BbMQ_lOMMfElRfKq",
-      "https://www.youtube.com/embed/Jm7Satp7Zqk?si=V3J__mcU7gEfAwK_",
-      "https://www.youtube.com/embed/lgvtusNiHQo?si=h6Zwsi0syx6Aa_Ph",
-      "https://www.youtube.com/embed/99NUJ1cLbBI?si=OxQCblV1UPZEGJyM",
-      "https://www.youtube.com/embed/VGPmFSB8qVY?si=jFU9_-pcHcxy4lrX",
-      "https://www.youtube.com/embed/CtgD91Ev4NU?si=Z3dbtyZgokVGzcSB"
+    const videoIds = [
+      "tucWbkH5WX0",
+      "Jm7Satp7Zqk",
+      "lgvtusNiHQo",
+      "99NUJ1cLbBI",
+      "VGPmFSB8qVY",
+      "CtgD91Ev4NU"
     ];
     let videoIndex = 0;
 
     function showVideo() {
-      const link = videos[videoIndex];
+      const id = videoIds[videoIndex];
+      const embedUrl = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&loop=1&playlist=${id}`;
       document.getElementById('content').innerHTML = `
         <p>This song reminds me of you ❤️</p>
-        <iframe width="300" height="200" src="${link}" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="${embedUrl}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       `;
-      videoIndex = (videoIndex + 1) % videos.length;
+      videoIndex = (videoIndex + 1) % videoIds.length;
     }
 
     const jokes = [
@@ -116,12 +126,12 @@
       In your smile, I lose all wars.<br>
       Even when you’re down or feeling blue,<br>
       Just know — I’m here for you 💕`,
-      
+
       `Like moonlight in the darkest night,<br>
       You make my world so warm and bright.<br>
       Don’t be sad, my precious soul,<br>
       You’re my heart, my only goal 🥰`,
-      
+
       `No matter what you go through,<br>
       Just remember I love you.<br>
       Forever and always, that's my vow,<br>
