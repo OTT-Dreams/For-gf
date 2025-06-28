@@ -49,7 +49,7 @@
       color: #fff;
     }
 
-    iframe, img {
+    iframe {
       margin-top: 10px;
       border-radius: 12px;
       box-shadow: 0 0 10px #fff;
@@ -58,14 +58,13 @@
 </head>
 <body>
   <div class="container">
-    <h1>Hey My Love 💖</h1>
-    <p>মুড অফ হলেও, আমি সবসময় তোমার পাশে আছি 🫶</p>
+    <h1>Hey Beautiful 💖</h1>
+    <p>Even when you're sad, my love for you never fades 🫶</p>
 
     <div class="button-group">
-      <button onclick="showVideo()">Miss korchi 😔</button>
-      <button onclick="showMemory()">Cute Memory 📸</button>
-      <button onclick="showSmile()">Ektu hasho na 😭</button>
-      <button onclick="showPoem()">Poem for You ✍️</button>
+      <button onclick="showVideo()">I'm Missing You 😔</button>
+      <button onclick="showSmile()">Smile Please 😭</button>
+      <button onclick="showPoem()">A Poem for You ✍️</button>
       <button onclick="randomQuote()">Love Quote 💌</button>
     </div>
 
@@ -73,53 +72,85 @@
 
     <button class="reveal" onclick="revealSecret()">Reveal My Heart 💘</button>
     <div id="secret" style="display:none;">
-      <p>তুমি আমার পৃথিবী... mood off থাকলেও, আমি আছি শুধুই তোমার জন্য ❤️</p>
+      <p>You are my world... No matter what, I'm always here for you ❤️</p>
     </div>
   </div>
 
   <script>
+    const videos = [
+      "https://www.youtube.com/embed/tucWbkH5WX0?si=BbMQ_lOMMfElRfKq",
+      "https://www.youtube.com/embed/Jm7Satp7Zqk?si=V3J__mcU7gEfAwK_",
+      "https://www.youtube.com/embed/lgvtusNiHQo?si=h6Zwsi0syx6Aa_Ph",
+      "https://www.youtube.com/embed/99NUJ1cLbBI?si=OxQCblV1UPZEGJyM",
+      "https://www.youtube.com/embed/VGPmFSB8qVY?si=jFU9_-pcHcxy4lrX",
+      "https://www.youtube.com/embed/CtgD91Ev4NU?si=Z3dbtyZgokVGzcSB"
+    ];
+    let videoIndex = 0;
+
     function showVideo() {
+      const link = videos[videoIndex];
       document.getElementById('content').innerHTML = `
-        <p>এই গানটা শুনো, আমার তোমার প্রতি ভালোবাসা বোঝাতে ❤️</p>
-        <iframe width="300" height="200" src="https://www.youtube.com/embed/Scsn6nKNu6o" frameborder="0" allowfullscreen></iframe>
+        <p>This song reminds me of you ❤️</p>
+        <iframe width="300" height="200" src="${link}" frameborder="0" allowfullscreen></iframe>
       `;
+      videoIndex = (videoIndex + 1) % videos.length;
     }
 
-    function showMemory() {
-      document.getElementById('content').innerHTML = `
-        <p>মনে আছে, যেদিন প্রথম আমাদের ছবি তোলা হয়েছিলো?</p>
-        <img src="https://via.placeholder.com/300x200?text=Our+Cute+Memory" alt="Memory" width="300" height="200">
-      `;
-    }
+    const jokes = [
+      "Why did I fall for you? Because even gravity is jealous of how I’m pulled towards you 😅",
+      "Your smile is my favorite notification 💬💘",
+      "I tried to stop loving you, but my heart said, 'Access Denied!' 💻❤️",
+    ];
+    let jokeIndex = 0;
 
     function showSmile() {
       document.getElementById('content').innerHTML = `
-        <p>এই ছোট্ট জোকটা শোনো:</p>
-        <blockquote>তুমি হাসলে, আমি হারিয়ে যাই — কারণ তোমার হাসিতে দুনিয়া থেমে যায় 😅</blockquote>
+        <p>Here's something to make you smile:</p>
+        <blockquote>${jokes[jokeIndex]}</blockquote>
       `;
+      jokeIndex = (jokeIndex + 1) % jokes.length;
     }
+
+    const poems = [
+      `Your eyes shine brighter than the stars,<br>
+      In your smile, I lose all wars.<br>
+      Even when you’re down or feeling blue,<br>
+      Just know — I’m here for you 💕`,
+      
+      `Like moonlight in the darkest night,<br>
+      You make my world so warm and bright.<br>
+      Don’t be sad, my precious soul,<br>
+      You’re my heart, my only goal 🥰`,
+      
+      `No matter what you go through,<br>
+      Just remember I love you.<br>
+      Forever and always, that's my vow,<br>
+      I'll make you smile, starting now 💫`
+    ];
+    let poemIndex = 0;
 
     function showPoem() {
       document.getElementById('content').innerHTML = `
-        <p><strong>Poem:</strong></p>
-        <blockquote>
-          তোমার চোখে চাঁদের আলো,<br>
-          তোমার হাসিতে নতুন ভালো।<br>
-          মুড অফ হলেও ভয় নাই,<br>
-          আমি আছি, পাশে তাই 💕
-        </blockquote>
+        <p><strong>A Poem Just for You:</strong></p>
+        <blockquote>${poems[poemIndex]}</blockquote>
       `;
+      poemIndex = (poemIndex + 1) % poems.length;
     }
 
+    const quotes = [
+      "You are the sunshine that lights up my cloudy days ☀️",
+      "Every heartbeat whispers your name 💓",
+      "You're not just special, you're my everything 💖",
+      "Your happiness is my only priority 🫶",
+      "If I could hug you now, I’d never let go 🤗"
+    ];
+    let quoteIndex = 0;
+
     function randomQuote() {
-      const quotes = [
-        "“তুমি ছাড়া আমি অসম্পূর্ণ।”",
-        "“তোমার হাসিই আমার প্রিয় গান।”",
-        "“তুমি আমার সকাল, তুমি আমার রাত।”",
-        "“তোমার একটুখানি মন খারাপ, আমার পুরো দিন খারাপ।”"
-      ];
-      const q = quotes[Math.floor(Math.random() * quotes.length)];
-      document.getElementById('content').innerHTML = `<blockquote>${q}</blockquote>`;
+      document.getElementById('content').innerHTML = `
+        <blockquote>${quotes[quoteIndex]}</blockquote>
+      `;
+      quoteIndex = (quoteIndex + 1) % quotes.length;
     }
 
     function revealSecret() {
