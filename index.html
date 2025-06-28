@@ -1,43 +1,130 @@
-body {
-  font-family: 'Comic Sans MS', cursive;
-  background: linear-gradient(to right, #cc8899, #ffe4ec);
-  color: #fff;
-  padding: 40px;
-  text-align: center;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For You, My Love ❤️</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(to right, #cc8899, #ffe4ec);
+      color: #fff;
+      padding: 40px;
+      text-align: center;
+    }
 
-.container {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 0 15px #fff;
-  max-width: 600px;
-  margin: auto;
-}
+    .container {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #fff;
+      max-width: 600px;
+      margin: auto;
+    }
 
-h1 {
-  color: #fff0f5;
-}
+    h1 {
+      color: #fff0f5;
+    }
 
-.button-group button, .reveal {
-  margin: 10px;
-  padding: 12px 20px;
-  background-color: #fff0f5;
-  color: #cc3366;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-}
+    .button-group button, .reveal {
+      margin: 10px;
+      padding: 12px 20px;
+      background-color: #fff0f5;
+      color: #cc3366;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-button:hover {
-  background-color: #ffd6e8;
-}
+    button:hover {
+      background-color: #ffd6e8;
+    }
 
-.content, #secret {
-  margin-top: 20px;
-  background: rgba(255, 255, 255, 0.15);
-  padding: 15px;
-  border-radius: 10px;
-  color: #fff;
-}
+    .content, #secret {
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 15px;
+      border-radius: 10px;
+      color: #fff;
+    }
+
+    iframe, img {
+      margin-top: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hey My Love 💖</h1>
+    <p>মুড অফ হলেও, আমি সবসময় তোমার পাশে আছি 🫶</p>
+
+    <div class="button-group">
+      <button onclick="showVideo()">Miss korchi 😔</button>
+      <button onclick="showMemory()">Cute Memory 📸</button>
+      <button onclick="showSmile()">Ektu hasho na 😭</button>
+      <button onclick="showPoem()">Poem for You ✍️</button>
+      <button onclick="randomQuote()">Love Quote 💌</button>
+    </div>
+
+    <div class="content" id="content"></div>
+
+    <button class="reveal" onclick="revealSecret()">Reveal My Heart 💘</button>
+    <div id="secret" style="display:none;">
+      <p>তুমি আমার পৃথিবী... mood off থাকলেও, আমি আছি শুধুই তোমার জন্য ❤️</p>
+    </div>
+  </div>
+
+  <script>
+    function showVideo() {
+      document.getElementById('content').innerHTML = `
+        <p>এই গানটা শুনো, আমার তোমার প্রতি ভালোবাসা বোঝাতে ❤️</p>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/Scsn6nKNu6o" frameborder="0" allowfullscreen></iframe>
+      `;
+    }
+
+    function showMemory() {
+      document.getElementById('content').innerHTML = `
+        <p>মনে আছে, যেদিন প্রথম আমাদের ছবি তোলা হয়েছিলো?</p>
+        <img src="https://via.placeholder.com/300x200?text=Our+Cute+Memory" alt="Memory" width="300" height="200">
+      `;
+    }
+
+    function showSmile() {
+      document.getElementById('content').innerHTML = `
+        <p>এই ছোট্ট জোকটা শোনো:</p>
+        <blockquote>তুমি হাসলে, আমি হারিয়ে যাই — কারণ তোমার হাসিতে দুনিয়া থেমে যায় 😅</blockquote>
+      `;
+    }
+
+    function showPoem() {
+      document.getElementById('content').innerHTML = `
+        <p><strong>Poem:</strong></p>
+        <blockquote>
+          তোমার চোখে চাঁদের আলো,<br>
+          তোমার হাসিতে নতুন ভালো।<br>
+          মুড অফ হলেও ভয় নাই,<br>
+          আমি আছি, পাশে তাই 💕
+        </blockquote>
+      `;
+    }
+
+    function randomQuote() {
+      const quotes = [
+        "“তুমি ছাড়া আমি অসম্পূর্ণ।”",
+        "“তোমার হাসিই আমার প্রিয় গান।”",
+        "“তুমি আমার সকাল, তুমি আমার রাত।”",
+        "“তোমার একটুখানি মন খারাপ, আমার পুরো দিন খারাপ।”"
+      ];
+      const q = quotes[Math.floor(Math.random() * quotes.length)];
+      document.getElementById('content').innerHTML = `<blockquote>${q}</blockquote>`;
+    }
+
+    function revealSecret() {
+      document.getElementById('secret').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
