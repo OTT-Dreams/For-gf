@@ -98,7 +98,7 @@
 
     function showVideo() {
       const id = videoIds[videoIndex];
-      const embedUrl = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&loop=1&playlist=${id}`;
+      const embedUrl = `https://www.youtube.com/embed/${id}?autoplay=1&loop=1&playlist=${id}`;
       document.getElementById('content').innerHTML = `
         <p>This song reminds me of you ❤️</p>
         <iframe width="300" height="200" src="${embedUrl}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
